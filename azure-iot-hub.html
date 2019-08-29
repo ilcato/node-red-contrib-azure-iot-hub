@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  RED.nodes.registerType('Azure IoT Hub out',{
+      category: 'Azure',
+      color: '#3078CD',
+      defaults: {
+          hostname: {value:""},  
+          deviceid: {value:""},
+          sharedaccesskey: {value:""},
+          edgecacertpath: {value:""},
+          name: {value:""},
+      },
+      inputs:1,
+      outputs:0,
+      icon: "bridge.png",
+      label: function() {
+          return this.name||"Azure IoT Hub";
+      },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="Azure IoT Hub out">
+  <div class="form-row">
+    <label for="node-input-hostname"><i class="icon-tag"></i>Hostname</label>
+    <input type="text" id="node-input-hostname" placeholder="hostname">
+  </div>
+  <div class="form-row">
+    <label for="node-input-deviceid"><i class="icon-tag"></i>Device id</label>
+    <input type="text" id="node-input-deviceid" placeholder="Device id">
+  </div>
+  <div class="form-row">
+    <label for="node-input-sharedaccesskey"><i class="icon-tag"></i>Access key</label>
+    <input type="text" id="node-input-sharedaccesskey" placeholder="Access key">
+  </div>
+  <div class="form-row">
+    <label for="node-input-edgecacertpath"><i class="icon-tag"></i>CA cert</label>
+    <input type="text" id="node-input-edgecacertpath" placeholder="path">
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="Azure IoT Hub out">
+  <p>This node send the payload to Azure IoT Hub</p>
+</script>
